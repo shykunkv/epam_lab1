@@ -1,11 +1,24 @@
 package vegetables;
 
+
+/**
+ * Abstract vegetable
+ */
 public abstract class Vegetable implements Comparable<Vegetable> {
 	
+	/**
+	 * Vegetable weight
+	 */
 	private double weight;
-	private double calories;
 	
 	/**
+	 * Number of calories in vegetable
+	 */
+	private double calories;
+	
+	
+	/**
+	 * Constructor
 	 * @param weight
 	 * @param calories
 	 */
@@ -14,7 +27,9 @@ public abstract class Vegetable implements Comparable<Vegetable> {
 		this.calories = calories;
 	}
 	
-	
+	/**
+	 * Getters and setters
+	 */
 	public double getWeight() {
 		return weight;
 	}
@@ -28,6 +43,10 @@ public abstract class Vegetable implements Comparable<Vegetable> {
 		this.calories = calories;
 	}	
 	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -38,13 +57,21 @@ public abstract class Vegetable implements Comparable<Vegetable> {
 		return sb.toString();
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Comparable#compareTo(java.lang.Object)
+	 */
+	@Override
 	public int compareTo(Vegetable vegetable) {
-		
 		//ascending order
 		return (int) this.weight -  (int) vegetable.getWeight();
 		
 	}
 	
+	/**
+	 * Get name of the vegetable
+	 * @return vegetable name
+	 */
 	public abstract String getName();
 	
 }
